@@ -18,7 +18,7 @@ const DashboardSidebar = () => {
     <aside className="min-h-screen w-64 bg-white border-r border-gray-200 flex flex-col">
       <div className="p-4 border-b border-gray-200">
         <div className="flex items-center space-x-2">
-          <Car className="text-sigeti-blue" size={24} />
+          <Car className="text-sigeti-orange" size={24} />
           <h1 className="text-xl font-bold text-sigeti-gray-dark">SiGeTi</h1>
         </div>
         <p className="text-xs text-sigeti-gray-medium mt-1">Sistema de Gestión de Tráfico Inteligente</p>
@@ -33,7 +33,7 @@ const DashboardSidebar = () => {
                 className={({ isActive }) =>
                   `flex items-center space-x-3 px-3 py-2 rounded-lg transition-colors ${
                     isActive
-                      ? 'bg-sigeti-blue text-white'
+                      ? 'bg-sigeti-orange text-white'
                       : 'text-sigeti-gray-medium hover:bg-gray-100'
                   }`
                 }
@@ -48,7 +48,7 @@ const DashboardSidebar = () => {
       
       <div className="p-4 border-t border-gray-200">
         <div className="flex items-center space-x-3 px-3 py-2">
-          <div className="w-8 h-8 rounded-full bg-sigeti-blue flex items-center justify-center text-white">
+          <div className="w-8 h-8 rounded-full bg-sigeti-orange flex items-center justify-center text-white">
             <span className="text-sm font-medium">HM</span>
           </div>
           <div>

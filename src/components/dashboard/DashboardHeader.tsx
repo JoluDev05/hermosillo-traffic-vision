@@ -14,7 +14,7 @@ const DashboardHeader = () => {
           <input
             type="text"
             placeholder="Buscar..."
-            className="pl-9 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-sigeti-blue focus:border-transparent"
+            className="pl-9 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-sigeti-orange focus:border-transparent"
           />
           <Search size={18} className="absolute left-2.5 top-2.5 text-sigeti-gray-medium" />
         </div>
@@ -29,7 +29,7 @@ const DashboardHeader = () => {
         <div className="h-8 w-[1px] bg-gray-200"></div>
         
         <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 rounded-full bg-sigeti-blue flex items-center justify-center text-white">
+          <div className="w-8 h-8 rounded-full bg-sigeti-orange flex items-center justify-center text-white">
             <span className="text-sm font-medium">OP</span>
           </div>
           <div>

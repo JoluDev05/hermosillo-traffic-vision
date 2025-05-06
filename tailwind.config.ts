@@ -64,14 +64,14 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				sigeti: {
-					blue: '#0EA5E9',
+					orange: '#F97316',
 					red: '#ea384c',
 					gray: {
 						dark: '#222222',
 						medium: '#555555',
 						light: '#8A898C'
 					},
-					orange: '#F97316',
+					blue: '#0EA5E9', 
 					green: '#10B981'
 				}
 			},

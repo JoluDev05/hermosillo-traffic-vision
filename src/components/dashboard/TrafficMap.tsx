@@ -2,13 +2,11 @@
 import React from 'react';
 import { MapPin, AlertTriangle, Construction, Calendar } from 'lucide-react';
 
-// Mock component para simular un mapa real - en una implementación completa se usaría una biblioteca de mapas como Mapbox o Google Maps
 const TrafficMap = () => {
   return (
     <div className="h-full w-full bg-gray-100 rounded-lg relative overflow-hidden">
-      {/* Fondo de mapa simulado */}
-      <div className="absolute inset-0 bg-[url('https://api.mapbox.com/styles/v1/mapbox/light-v10/static/-110.9541,29.0729,11,0/1200x800?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA')]
-                     bg-cover bg-center"></div>
+      {/* Usando la imagen cargada */}
+      <div className="absolute inset-0 bg-[url('/lovable-uploads/d42da1b0-5832-4e78-8255-7d416f10759e.png')] bg-cover bg-center"></div>
       
       {/* Capa de interacción */}
       <div className="absolute inset-0 bg-black/5"></div>
@@ -36,15 +34,15 @@ const TrafficMap = () => {
       
       <div className="absolute left-[50%] top-[30%] transform -translate-x-1/2 -translate-y-1/2">
         <div className="bg-white p-1 rounded-full shadow-md">
-          <Calendar size={16} className="text-sigeti-blue" />
+          <Calendar size={16} className="text-sigeti-orange" />
         </div>
       </div>
       
       {/* Controles del mapa */}
       <div className="absolute top-4 right-4 bg-white shadow-md rounded-lg p-1 flex flex-col space-y-1">
-        <button className="w-8 h-8 flex items-center justify-center text-sigeti-gray-medium hover:text-sigeti-blue rounded">+</button>
+        <button className="w-8 h-8 flex items-center justify-center text-sigeti-gray-medium hover:text-sigeti-orange rounded">+</button>
         <div className="w-8 h-[1px] bg-gray-200"></div>
-        <button className="w-8 h-8 flex items-center justify-center text-sigeti-gray-medium hover:text-sigeti-blue rounded">−</button>
+        <button className="w-8 h-8 flex items-center justify-center text-sigeti-gray-medium hover:text-sigeti-orange rounded">−</button>
       </div>
       
       {/* Leyenda */}
@@ -72,7 +70,7 @@ const TrafficMap = () => {
             <span>Construcción</span>
           </div>
           <div className="flex items-center space-x-2">
-            <Calendar size={12} className="text-sigeti-blue" />
+            <Calendar size={12} className="text-sigeti-orange" />
             <span>Evento</span>
           </div>
         </div>
@@ -81,10 +79,10 @@ const TrafficMap = () => {
       {/* Filtros */}
       <div className="absolute top-4 left-4 bg-white shadow-md rounded-lg p-3">
         <div className="flex space-x-2">
-          <button className="px-3 py-1 text-xs bg-sigeti-blue text-white rounded-full">Todo</button>
-          <button className="px-3 py-1 text-xs bg-white border border-gray-200 rounded-full text-sigeti-gray-medium hover:border-sigeti-blue hover:text-sigeti-blue">Incidentes</button>
-          <button className="px-3 py-1 text-xs bg-white border border-gray-200 rounded-full text-sigeti-gray-medium hover:border-sigeti-blue hover:text-sigeti-blue">Construcción</button>
-          <button className="px-3 py-1 text-xs bg-white border border-gray-200 rounded-full text-sigeti-gray-medium hover:border-sigeti-blue hover:text-sigeti-blue">Eventos</button>
+          <button className="px-3 py-1 text-xs bg-sigeti-orange text-white rounded-full">Todo</button>
+          <button className="px-3 py-1 text-xs bg-white border border-gray-200 rounded-full text-sigeti-gray-medium hover:border-sigeti-orange hover:text-sigeti-orange">Incidentes</button>
+          <button className="px-3 py-1 text-xs bg-white border border-gray-200 rounded-full text-sigeti-gray-medium hover:border-sigeti-orange hover:text-sigeti-orange">Construcción</button>
+          <button className="px-3 py-1 text-xs bg-white border border-gray-200 rounded-full text-sigeti-gray-medium hover:border-sigeti-orange hover:text-sigeti-orange">Eventos</button>
         </div>
       </div>
     </div>

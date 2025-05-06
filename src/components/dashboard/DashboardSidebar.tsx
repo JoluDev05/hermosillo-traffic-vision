@@ -17,11 +17,16 @@ const DashboardSidebar = () => {
   return (
     <aside className="min-h-screen w-64 bg-white border-r border-gray-200 flex flex-col">
       <div className="p-4 border-b border-gray-200">
-        <div className="flex items-center space-x-2">
-          <Car className="text-sigeti-orange" size={24} />
-          <h1 className="text-xl font-bold text-sigeti-gray-dark">SiGeTi</h1>
+        <div className="flex items-center">
+          <div className="w-full">
+            <img 
+              src="/lovable-uploads/01bc7d94-b05b-4429-95c1-2bef3d3ab54e.png" 
+              alt="SiGeTi Logo" 
+              className="h-12 w-auto"
+            />
+            <p className="text-xs text-sigeti-gray-medium mt-1">Sistema de Gestión de Tráfico Inteligente</p>
+          </div>
         </div>
-        <p className="text-xs text-sigeti-gray-medium mt-1">Sistema de Gestión de Tráfico Inteligente</p>
       </div>
       
       <nav className="flex-1 p-4">

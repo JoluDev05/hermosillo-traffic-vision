@@ -5,8 +5,8 @@ import { MapPin, AlertTriangle, Construction, Calendar } from 'lucide-react';
 const TrafficMap = () => {
   return (
     <div className="h-full w-full bg-gray-100 rounded-lg relative overflow-hidden">
-      {/* Usando la imagen cargada */}
-      <div className="absolute inset-0 bg-[url('/lovable-uploads/d42da1b0-5832-4e78-8255-7d416f10759e.png')] bg-cover bg-center"></div>
+      {/* Usando la imagen cargada del mapa de Hermosillo */}
+      <div className="absolute inset-0 bg-[url('/lovable-uploads/e054f42f-57e4-4dec-bbe3-6003815197cf.png')] bg-cover bg-center"></div>
       
       {/* Capa de interacción */}
       <div className="absolute inset-0 bg-black/5"></div>

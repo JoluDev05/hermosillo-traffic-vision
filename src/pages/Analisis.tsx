@@ -3,28 +3,72 @@ import React from 'react';
 import DashboardSidebar from '../components/dashboard/DashboardSidebar';
 import DashboardHeader from '../components/dashboard/DashboardHeader';
 import TrafficMap from '../components/dashboard/TrafficMap';
-import TrafficTrendChart from '../components/dashboard/TrafficTrendChart';
 import { ChartBar, Clock, MapPin, Calendar, BarChart2, PieChart } from 'lucide-react';
+import { ChartContainer } from '@/components/ui/chart';
+import { Bar, ResponsiveContainer, BarChart, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
-// Mock component para gráfico de barras
-const BarChartComponent = () => (
-  <div className="h-full flex items-center justify-center">
-    <div className="w-full flex items-end justify-around h-[80%] px-4">
-      {[65, 40, 85, 30, 75, 50, 90, 45, 60, 80, 35, 70].map((height, i) => (
-        <div key={i} className="relative group">
-          <div 
-            className="w-6 bg-sigeti-orange rounded-t-sm cursor-pointer transition-all hover:bg-sigeti-orange/80"
-            style={{ height: `${height}%` }}
-          ></div>
-          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs text-sigeti-gray-medium">
-            {i+7}h
-          </div>
-          <div className="absolute opacity-0 group-hover:opacity-100 transition-opacity bottom-full mb-2 left-1/2 -translate-x-1/2 bg-sigeti-gray-dark text-white text-xs rounded py-1 px-2">
-            {height}%
-          </div>
-        </div>
-      ))}
-    </div>
+// Datos de predicción de tráfico
+const trafficPredictionData = [
+  { hora: '7:00', congestion: 45, promedio: 40 },
+  { hora: '8:00', congestion: 80, promedio: 65 },
+  { hora: '9:00', congestion: 70, promedio: 60 },
+  { hora: '10:00', congestion: 50, promedio: 45 },
+  { hora: '11:00', congestion: 45, promedio: 40 },
+  { hora: '12:00', congestion: 55, promedio: 50 },
+  { hora: '13:00', congestion: 65, promedio: 55 },
+  { hora: '14:00', congestion: 50, promedio: 45 },
+  { hora: '15:00', congestion: 55, promedio: 50 },
+  { hora: '16:00', congestion: 60, promedio: 55 },
+  { hora: '17:00', congestion: 75, promedio: 65 },
+  { hora: '18:00', congestion: 85, promedio: 70 },
+  { hora: '19:00', congestion: 75, promedio: 65 },
+  { hora: '20:00', congestion: 60, promedio: 55 },
+];
+
+// Componente actualizado para el gráfico de barras
+const TrafficPredictionChart = () => (
+  <div className="h-full w-full">
+    <ResponsiveContainer width="100%" height="100%">
+      <BarChart
+        data={trafficPredictionData}
+        margin={{ top: 20, right: 30, left: 10, bottom: 30 }}
+      >
+        <CartesianGrid strokeDasharray="3 3" vertical={false} />
+        <XAxis 
+          dataKey="hora" 
+          tick={{ fontSize: 12 }} 
+          tickLine={false} 
+          axisLine={{ stroke: '#E5E7EB' }}
+        />
+        <YAxis 
+          tickFormatter={(value) => `${value}%`} 
+          tick={{ fontSize: 12 }} 
+          tickLine={false}
+          axisLine={{ stroke: '#E5E7EB' }}
+          domain={[0, 100]}
+        />
+        <Tooltip 
+          formatter={(value) => [`${value}%`, 'Nivel de congestión']}
+          labelFormatter={(label) => `${label} hrs`}
+          contentStyle={{ borderRadius: '8px', border: '1px solid #E5E7EB' }}
+        />
+        <Legend wrapperStyle={{ paddingTop: '10px' }} />
+        <Bar 
+          name="Predicción hoy" 
+          dataKey="congestion" 
+          fill="#F97316" 
+          radius={[4, 4, 0, 0]} 
+          maxBarSize={40}
+        />
+        <Bar 
+          name="Promedio histórico" 
+          dataKey="promedio" 
+          fill="#FDBA74" 
+          radius={[4, 4, 0, 0]} 
+          maxBarSize={40}
+        />
+      </BarChart>
+    </ResponsiveContainer>
   </div>
 );
 
@@ -101,7 +145,7 @@ const Analisis = () => {
                   </div>
                 </div>
                 <div className="h-[calc(100%-2rem)]">
-                  <BarChartComponent />
+                  <TrafficPredictionChart />
                 </div>
               </div>
             </div>

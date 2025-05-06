@@ -6,7 +6,7 @@ const TrafficMap = () => {
   return (
     <div className="h-full w-full bg-gray-100 rounded-lg relative overflow-hidden">
       {/* Usando la imagen cargada del mapa de Hermosillo */}
-      <div className="absolute inset-0 bg-[url('/lovable-uploads/e054f42f-57e4-4dec-bbe3-6003815197cf.png')] bg-cover bg-center"></div>
+      <div className="absolute inset-0 bg-[url('/lovable-uploads/7588394b-bb1b-4f9b-954b-d7c22a87c056.png')] bg-cover bg-center"></div>
       
       {/* Capa de interacción */}
       <div className="absolute inset-0 bg-black/5"></div>

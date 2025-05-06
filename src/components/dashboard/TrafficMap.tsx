@@ -1,16 +1,19 @@
-
 import React from 'react';
 import { MapPin, AlertTriangle, Construction, Calendar } from 'lucide-react';
+import hermosilloMap from '@/assets/maps/hermosillo.png'; // Ajusta la ruta si no usas alias "@"
 
 const TrafficMap = () => {
   return (
     <div className="h-full w-full bg-gray-100 rounded-lg relative overflow-hidden">
-      {/* Usando la imagen cargada del mapa de Hermosillo */}
-      <div className="absolute inset-0 bg-[url('/lovable-uploads/7588394b-bb1b-4f9b-954b-d7c22a87c056.png')] bg-cover bg-center"></div>
-      
+      {/* Imagen de fondo del mapa */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${hermosilloMap})` }}
+      ></div>
+
       {/* Capa de interacción */}
       <div className="absolute inset-0 bg-black/5"></div>
-      
+
       {/* Puntos simulados de tráfico */}
       <div className="absolute left-[30%] top-[40%] map-heatmap-dot"></div>
       <div className="absolute left-[35%] top-[42%] map-heatmap-dot"></div>
@@ -18,33 +21,33 @@ const TrafficMap = () => {
       <div className="absolute left-[50%] top-[30%] map-heatmap-dot low"></div>
       <div className="absolute left-[60%] top-[55%] map-heatmap-dot medium"></div>
       <div className="absolute left-[70%] top-[60%] map-heatmap-dot low"></div>
-      
+
       {/* Iconos de eventos simulados */}
       <div className="absolute left-[30%] top-[40%] transform -translate-x-1/2 -translate-y-1/2">
         <div className="bg-white p-1 rounded-full shadow-md">
           <AlertTriangle size={16} className="text-sigeti-red" />
         </div>
       </div>
-      
+
       <div className="absolute left-[60%] top-[55%] transform -translate-x-1/2 -translate-y-1/2">
         <div className="bg-white p-1 rounded-full shadow-md">
           <Construction size={16} className="text-sigeti-orange" />
         </div>
       </div>
-      
+
       <div className="absolute left-[50%] top-[30%] transform -translate-x-1/2 -translate-y-1/2">
         <div className="bg-white p-1 rounded-full shadow-md">
           <Calendar size={16} className="text-sigeti-orange" />
         </div>
       </div>
-      
+
       {/* Controles del mapa */}
       <div className="absolute top-4 right-4 bg-white shadow-md rounded-lg p-1 flex flex-col space-y-1">
         <button className="w-8 h-8 flex items-center justify-center text-sigeti-gray-medium hover:text-sigeti-orange rounded">+</button>
         <div className="w-8 h-[1px] bg-gray-200"></div>
         <button className="w-8 h-8 flex items-center justify-center text-sigeti-gray-medium hover:text-sigeti-orange rounded">−</button>
       </div>
-      
+
       {/* Leyenda */}
       <div className="absolute bottom-4 right-4 bg-white shadow-md rounded-lg p-3 text-xs">
         <h4 className="font-medium text-sigeti-gray-dark mb-2">Leyenda</h4>
@@ -75,7 +78,7 @@ const TrafficMap = () => {
           </div>
         </div>
       </div>
-      
+
       {/* Filtros */}
       <div className="absolute top-4 left-4 bg-white shadow-md rounded-lg p-3">
         <div className="flex space-x-2">
